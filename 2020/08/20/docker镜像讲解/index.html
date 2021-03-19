@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>docker镜像讲解 | Hexo</title><meta name="keywords" content="docker,学习笔记"><meta name="author" content="流恋"><meta name="copyright" content="流恋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Docker基础篇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker镜像讲解">
+<meta property="og:url" content="http://example.com/2020/08/20/docker%E9%95%9C%E5%83%8F%E8%AE%B2%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Docker基础篇">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片(1).svg">
+<meta property="article:published_time" content="2020-08-20T06:27:35.000Z">
+<meta property="article:modified_time" content="2021-01-06T06:50:31.774Z">
+<meta property="article:author" content="流恋">
+<meta property="article:tag" content="docker,学习笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片(1).svg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="http://example.com/2020/08/20/docker%E9%95%9C%E5%83%8F%E8%AE%B2%E8%A7%A3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-06 14:50:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="wizard-scene"><div class="wizard-objects"><div class="wizard-square"></div><div class="wizard-circle"></div><div class="wizard-triangle"></div></div><div class="wizard"><div class="wizard-body"></div><div class="wizard-right-arm"><div class="wizard-right-hand"></div></div><div class="wizard-left-arm"><div class="wizard-left-hand"></div></div><div class="wizard-head"><div class="wizard-beard"></div><div class="wizard-face"><div class="wizard-adds"></div></div><div class="wizard-hat"><div class="wizard-hat-of-the-hat"></div><div class="wizard-four-point-star --first"></div><div class="wizard-four-point-star --second"></div><div class="wizard-four-point-star --third"></div></div></div></div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/liulian.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas facebook_comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background: none"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas facebook_comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">docker镜像讲解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-20T06:27:35.000Z" title="发表于 2020-08-20 14:27:35">2020-08-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-06T06:50:31.774Z" title="更新于 2021-01-06 14:50:31">2021-01-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/docker/">docker</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Docker镜像讲解"><a href="#Docker镜像讲解" class="headerlink" title="Docker镜像讲解"></a>Docker镜像讲解</h1><h3 id="1-镜像是什么"><a href="#1-镜像是什么" class="headerlink" title="1.镜像是什么"></a>1.镜像是什么</h3><hr>
+<p>镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发的软件，它包含运行某个软件所需的所有内容，包括代码、运行时、库、环境变量和配置文件。</p>
+<p>所有的应用，直接打包docker镜像，就可以直接跑起来！</p>
+<p>==如何得到镜像：==</p>
+<ul>
+<li>从远程仓库下载</li>
+<li>朋友拷贝给你</li>
+<li>自己制作一个镜像DockerFile</li>
+</ul>
+<h3 id="2-Docker镜像加载原理"><a href="#2-Docker镜像加载原理" class="headerlink" title="2.Docker镜像加载原理"></a>2.Docker镜像加载原理</h3><hr>
+<p>==UnionFS（联合文件系统）==</p>
+<p>我们下载的时候看到的一层层就是这个！</p>
+<p>UnionFS（联合文件系统）：Union文件系统（UnionFS）是一种<u><strong>分层、轻量级</strong></u>并且高性能的文件系统，它支持对文件系统的修改作为一次提交来一层层的叠加，同时可以将不同目录挂载到同一个虚拟文件系统下(unite several directories into a single virtual filesystem)。Union 文件系统是 Docker 镜像的基础。镜像可以通过分层来进行继承，基于基础镜像（没有父镜像），可以制作各种具体的应用镜像。</p>
+<p>特性：一次同时加载多个文件系统，但从外面看起来，只能看到一个文件系统，联合加载会把各层文件系统叠加起来，这样最终的文件系统会包含所有底层的文件和目录</p>
+<p>==Docker镜像加载原理==</p>
+<p>docker的镜像实际上由一层一层的文件系统组成，这种层级的文件系统UnionFS。</p>
+<p>bootfs(boot file system)主要包含bootloader和kernel, bootloader主要是引导加载kernel, Linux刚启动时会加载bootfs文件系统，在Docker镜像的最底层是bootfs。这一层与我们典型的Linux/Unix系统是一样的，包含boot加载器和内核。当boot加载完成之后整个内核就都在内存中了，此时内存的使用权已由bootfs转交给内核，此时系统也会卸载bootfs。</p>
+<p> rootfs (root file system) ，在bootfs之上。包含的就是典型 Linux 系统中的 /dev, /proc, /bin, /etc 等标准目录和文件。rootfs就是各种不同的操作系统发行版，比如Ubuntu，Centos等等。</p>
+<p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/image-20200702104028782.png" alt="image-20200702104028782"></p>
+<p>平时我们安装进虚拟机的CentOS都是好几个G，为什么docker这里才200M？</p>
+<p><img src="data:image/png;base64,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" alt="graphic"></p>
+<p>对于一个精简的OS，rootfs可以很小，只需要包括最基本的命令、工具和程序库就可以了，因为底层直接用Host的kernel，自己只需要提供 rootfs 就行了。由此可见对于不同的linux发行版, bootfs基本是一致的, rootfs会有差别, 因此不同的发行版可以公用bootfs。</p>
+<!--虚拟机是分钟级别，容器是秒级！-->
+
+<h3 id="3-分层理解"><a href="#3-分层理解" class="headerlink" title="3.分层理解"></a>3.分层理解</h3><hr>
+<p>==分层的理解==</p>
+<p>我们可以去下载一个镜像，注意观察下载的日志输出，可以看到是一层一层的下载！</p>
+<p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/image-20200702104856627.png" alt="image-20200702104856627"></p>
+<p>==为什么Docker镜像要采用这个分层结构呢？==</p>
+<p><strong>最大的一个好处就是 - 共享资源</strong>!</p>
+<p> 比如：有多个镜像都从相同的 base 镜像构建而来，那么宿主机只需在磁盘上保存一份base镜像，同时内存中也只需加载一份 base 镜像，就可以为所有容器服务了。而且镜像的每一层都可以被共享。</p>
+<p>查看镜像分层的方式可以通过docker image inspect命令！</p>
+<p>查看一个redis的images的分层</p>
+<p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/image-20200702105957046.png" alt="image-20200702105957046"></p>
+<p><em># 我们可以清楚的看到 Redis的镜像其实是分很多层的</em></p>
+<p>理解：</p>
+<p>所有的 Docker镜像都起始于一个基础镜像层，进行修改或增加新的内容时，就会在当前的镜像层之上，创建新的镜像层。</p>
+<p>举一个简单的例子，假如基于 Ubuntu linux16.04创建一个新的镜像，这就是新镜像的第一层；如果在该镜像中添加Python包就会在基础镜像层之上创建第二个镜像层；如果继续添加一个安全补丁，就会创建第三个镜像层该镜像当前已经包含3个镜像层，如下图所示（这只是一个用于演示的很简单的例子）<br><img src="https://img-blog.csdnimg.cn/20200623181636467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5MzgxNzc1,size_16,color_FFFFFF,t_70" alt="image10"></p>
+<p>在添加额外的镜像层的同时，镜像始终保持是当前所有镜像的组合，理解这一点非常重要。下图中举了一个简单的例子，每个镜像层包含3个文件，而镜像包含了来自两个镜像层的6个文件。</p>
+<p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/20200627001100627110.png" alt="20200627001100627110"></p>
+<p>上图中的镜像层跟之前图中的略有区别，主要目的是便于展示文件。<br>下图中展示了一个稍微复杂的三层镜像，在外部看来整个镜像只有6个文件，这是因为最上层中的文件7是文件5的一个更新版</p>
+<p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/20200627001100684724.png" alt="20200627001100684724"></p>
+<p>这种情况下，上层镜像层中的文件覆盖了底层镜像层中的文件。这样就使得文件的更新版本作为一个新镜像层添加到镜像当中。<br>Docker通过存储引擎（新版本采用快照机制）的方式来实现镜像层堆栈，并保证多镜像层对外屐示为统一的文件系统。<br>Linux上可用的存储引擎有AUFS、 Overlay2、 Device Mapper、Btfs以及ZFS 。顾名思义，每种存储引擎都基于 Linux中对应的文件系统或者块设备技术，并且每种存储引擎都有其独有的性能特点。<br>Docker在 Windows上仅支持 windowsfilter 一种存储引擎，该引擎基于NTFS文件系统之上实现了分层和CoW。<br>下图展示了与系统显示相同的三层镜像。所有镜像层堆并合并，对外提供统一的视图</p>
+<p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/20200627001100738431.png" alt="20200627001100738431"></p>
+<p>==特点==</p>
+<p>Docker镜像都是只读的，当容器启动时新的可写层被加载到镜像的顶部，这一层就是我们通常说的容器层，容器之下的都叫镜像层。</p>
+<p>!<img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/image-20200702112428211.png" alt="image-20200702112428211"></p>
+<p>如何提交一个自己的镜像</p>
+<h3 id="4-commit镜像"><a href="#4-commit镜像" class="headerlink" title="4.commit镜像"></a>4.commit镜像</h3><hr>
+<p>docker commit  提交容器成为一个新的副本</p>
+<p>#命令和git原理类似</p>
+<p>docker commit -m=”提交的描述信息”  -a=”作者” 容器id 目标镜像名:[TAG]</p>
+<p>实战测试</p>
+<p>#1、启动一个默认的tomcat</p>
+<p>#2、发现这个默认的tomcat,是没有webapps应用，镜像的原因，官方的镜像默认webapps下面是没有文件的</p>
+<p>#3、我自己拷贝进去了基本的文件</p>
+<p>#4、将我们操作过的容器通过commit提交为一个镜像！我们以后就使用我们修改过的容器即可，这是我们自己一个修改的镜像！</p>
+<p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/image-20200702134435046.png" alt="image-20200702134435046"></p>
+<p>学习方式说明：理解概念，但是一定要实践，最后实践跟理论相结合一次搞定这个知识</p>
+<p>如果你想要保存当前容器的状态，就可以通过commit来提交，获得一个镜像，就好比虚拟机的快照！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">流恋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/08/20/docker%E9%95%9C%E5%83%8F%E8%AE%B2%E8%A7%A3/">http://example.com/2020/08/20/docker%E9%95%9C%E5%83%8F%E8%AE%B2%E8%A7%A3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">docker,学习笔记</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片(1).svg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/img/alipay.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/08/20/%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片.svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">容器数据卷</div></div></a></div><div class="next-post pull-right"><a href="/2020/08/20/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片(1).svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">docker常用命令</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/08/20/dockerfile/" title="dockerfile"><img class="cover" src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-20</div><div class="title">dockerfile</div></div></a></div><div><a href="/2020/08/19/docker安装流程/" title="docker安装流程"><img class="cover" src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片(1).svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-19</div><div class="title">docker安装流程</div></div></a></div><div><a href="/2020/08/21/docker网络/" title="docker网络"><img class="cover" src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="title">docker网络</div></div></a></div><div><a href="/2020/08/20/容器数据卷/" title="容器数据卷"><img class="cover" src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-20</div><div class="title">容器数据卷</div></div></a></div><div><a href="/2020/08/20/docker常用命令/" title="docker常用命令"><img class="cover" src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/蓝黄色补习班老师卡通教育介绍中文名片(1).svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-20</div><div class="title">docker常用命令</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/liulian.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">流恋</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xiayuan-001/xiayuan-001.github.io.git"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E9%95%9C%E5%83%8F%E8%AE%B2%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">Docker镜像讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%95%9C%E5%83%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.镜像是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Docker%E9%95%9C%E5%83%8F%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.Docker镜像加载原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%86%E5%B1%82%E7%90%86%E8%A7%A3"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.分层理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-commit%E9%95%9C%E5%83%8F"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.commit镜像</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-clock"><div id="clock"><img v-if="clockshow == &quot;false&quot;" alt="" src="/assets/weather/loading.gif" height="120px" width="100%"/><table class="clock" v-if="clockshow"><tbody><tr><td class="clockdate">{{date}}</td><td class="weatherimg"><img id="weatherimg" :src="weatherimg" alt=""/></td><td class="temperature">{{temperature}}</td><td class="humidityimg"><img id="humidityimg" :src="humidityimg" alt=""/></td><td class="humidity">{{humidity}}</td></tr><tr class="time"><td colspan="5">{{time}}</td></tr><tr><td class="usaqi" colspan="1"> <span>{{ip}}</span></td><td class="city" colspan="2">{{city}}</td><td class="daylight" colspan="2">{{daylight}}</td></tr></tbody></table></div></div><script defer="defer" data-pjax="data-pjax" src="/js/card_clock.js"></script><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/02/05/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/02/05/hello-world/" title="Hello World">Hello World</a><time datetime="2021-02-05T04:11:55.239Z" title="发表于 2021-02-05 12:11:55">2021-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/02/js-1/" title="JavaScript之初识②"><img src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/javascript.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript之初识②"/></a><div class="content"><a class="title" href="/2021/02/02/js-1/" title="JavaScript之初识②">JavaScript之初识②</a><time datetime="2021-02-02T08:06:58.000Z" title="发表于 2021-02-02 16:06:58">2021-02-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/27/js/" title="JavaScript之初识①"><img src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/javascript.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript之初识①"/></a><div class="content"><a class="title" href="/2021/01/27/js/" title="JavaScript之初识①">JavaScript之初识①</a><time datetime="2021-01-27T08:06:58.000Z" title="发表于 2021-01-27 16:06:58">2021-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/22/R%E8%AF%AD%E8%A8%80echarts4r%E5%8C%85%E5%9B%BE%E8%A1%A8%E7%B1%BB%E5%9E%8B/" title="R语言之echarts4r"><img src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/R.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="R语言之echarts4r"/></a><div class="content"><a class="title" href="/2021/01/22/R%E8%AF%AD%E8%A8%80echarts4r%E5%8C%85%E5%9B%BE%E8%A1%A8%E7%B1%BB%E5%9E%8B/" title="R语言之echarts4r">R语言之echarts4r</a><time datetime="2021-01-22T06:35:59.000Z" title="发表于 2021-01-22 14:35:59">2021-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/20/R%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%BB%9F%E8%AE%A1%E7%AF%87/" title="R语言之统计篇"><img src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/R.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="R语言之统计篇"/></a><div class="content"><a class="title" href="/2021/01/20/R%E8%AF%AD%E8%A8%80%E4%B9%8B%E7%BB%9F%E8%AE%A1%E7%AF%87/" title="R语言之统计篇">R语言之统计篇</a><time datetime="2021-01-20T07:39:00.000Z" title="发表于 2021-01-20 15:39:00">2021-01-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 流恋</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><img class="icp-icon" src="https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/0bcff08ca63f75f26d0f0db7290665fc.png"><span>沪ICP备2021001204号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><script defer src="/js/tw_cn.js"></script><script defer src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer src="/js/search/local-search.js"></script><div class="js-pjax"><script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var gitcalendar = new Vue({
+  el: '#gitcalendar',
+  data: {
+    simplemode: true, 
+    user: 'xiayuan-001',
+    fixed: 'fixed',
+    px: 'px',
+    x: '',
+    y: '',
+    span1: '',
+    span2: '',
+    month: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+    monthchange: [],
+    oneyearbeforeday: '',
+    thisday: '',
+    amonthago: '',
+    aweekago: '',
+    weekdatacore: 0,
+    datacore: 0,
+    total: 0,
+    datadate: '',
+    data: [],
+    positionplusdata: [],
+    firstweek: [],
+    lastweek: [],
+    beforeweek: [],
+    thisweekdatacore: 0,
+    mounthbeforeday: 0,
+    mounthfirstindex: 0,
+    crispedges: 'crispedges',
+    thisdayindex: 0,
+    amonthagoindex: 0,
+    amonthagoweek: [],
+    firstdate: [],
+    first2date: [],
+    montharrbefore: [],
+    monthindex: 0,
+    color: ['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f']
+  },
+  methods: {
+    selectStyle(data, event) {
+      document.querySelector('.angle-wrapper').style.display = 'block'
+      this.span1 = data.date;
+      this.span2 = data.count;
+      this.x = event.clientX - 100;
+      this.y = event.clientY - 60
+    },
+    outStyle() {
+      document.querySelector('.angle-wrapper').style.display = 'none'
+    },
+    thiscolor(x) {
+      if (x === 0) {
+        let i = parseInt(x / 2);
+        return this.color[0]
+      } else if (x < 2) {
+        return this.color[1]
+      } else if (x < 20) {
+        let i = parseInt(x / 2);
+        return this.color[i]
+      } else {
+        return this.color[9]
+      }
+    },
+  }
+});
+var apiurl = 'python-github-calendar-api1.vercel.app' ? 'https://python-github-calendar-api1.vercel.app/api?' : 'https://githubapi.ryanchristian.dev/user/'
+var githubapiurl = apiurl + gitcalendar.user;
+//canvas绘图
+function responsiveChart() {
+  let c = document.getElementById("gitcanvas");
+  if (c) {
+    let cmessage = document.getElementById("gitmessage");
+    let ctx = c.getContext("2d");
+    c.width = document.getElementById("gitcalendarcanvasbox").offsetWidth;
+    let linemaxwitdh = 0.96 * c.width / gitcalendar.data.length;
+    c.height = 9 * linemaxwitdh;
+    let lineminwitdh = 0.8 * linemaxwitdh;
+    let setposition = {
+      x: 0.02 * c.width,
+      y: 0.025 * c.width
+    };
+    for (let week in gitcalendar.data) {
+      weekdata = gitcalendar.data[week];
+      for (let day in weekdata) {
+        let dataitem = {
+          date: "",
+          count: "",
+          x: 0,
+          y: 0
+        };
+        gitcalendar.positionplusdata.push(dataitem);
+        ctx.fillStyle = gitcalendar.thiscolor(weekdata[day].count);
+        setposition.y = Math.round(setposition.y * 100) / 100;
+        dataitem.date = weekdata[day].date;
+        dataitem.count = weekdata[day].count;
+        dataitem.x = setposition.x;
+        dataitem.y = setposition.y;
+        ctx.fillRect(setposition.x, setposition.y, lineminwitdh, lineminwitdh);
+        setposition.y = setposition.y + linemaxwitdh
+      };
+      setposition.y = 0.025 * c.width;
+      setposition.x = setposition.x + linemaxwitdh
+    };
+    ctx.font = "600  Arial";
+    ctx.fillStyle = '#aaa';
+    ctx.fillText("日", 0, 1.9 * linemaxwitdh);
+    ctx.fillText("二", 0, 3.9 * linemaxwitdh);
+    ctx.fillText("四", 0, 5.9 * linemaxwitdh);
+    ctx.fillText("六", 0, 7.9 * linemaxwitdh);
+    let monthindexlist = c.width / 24;
+    for (let index in gitcalendar.monthchange) {
+      ctx.fillText(gitcalendar.monthchange[index], monthindexlist, 0.7 * linemaxwitdh);
+      monthindexlist = monthindexlist + c.width / 12
+    };
+    cmessage.onmousemove = function(event) {
+      document.querySelector('.angle-wrapper').style.display = 'none'
+    };
+    c.onmousemove = function(event) {
+      document.querySelector('.angle-wrapper').style.display = 'none'
+      getMousePos(c, event);
+    };
+
+    function getMousePos(canvas, event) {
+      var rect = canvas.getBoundingClientRect();
+      var x = event.clientX - rect.left * (canvas.width / rect.width);
+      var y = event.clientY - rect.top * (canvas.height / rect.height);
+      //console.log("x:"+x+",y:"+y);
+      for (let item of gitcalendar.positionplusdata) {
+        let lenthx = x - item.x;
+        let lenthy = y - item.y;
+        //console.log(lenthx,lenthy);
+        if (0 < lenthx && lenthx < lineminwitdh) {
+          if (0 < lenthy && lenthy < lineminwitdh) {
+            //console.log(item.date,item.count)
+            document.querySelector('.angle-wrapper').style.display = 'block'
+            gitcalendar.span1 = item.date;
+            gitcalendar.span2 = item.count;
+            gitcalendar.x = event.clientX - 100;
+            gitcalendar.y = event.clientY - 60
+          }
+        }
+        //if(0< x - item.x <lineminwitdh&&0< y - item.y <lineminwitdh){
+        //console.log(item.count,item.date);
+        //}
+      }
+    }
+  }
+}
+//数据统计算法
+function addlastmonth() {
+  if (gitcalendar.thisdayindex === 0) {
+    thisweekcore(52);
+    thisweekcore(51);
+    thisweekcore(50);
+    thisweekcore(49);
+    thisweekcore(48);
+    gitcalendar.thisweekdatacore += gitcalendar.firstdate[6].count;
+    gitcalendar.amonthago = gitcalendar.firstdate[6].date
+  } else {
+    thisweekcore(52);
+    thisweekcore(51);
+    thisweekcore(50);
+    thisweekcore(49);
+    thisweek2core();
+    gitcalendar.amonthago = gitcalendar.first2date[gitcalendar.thisdayindex - 1].date
+  }
+};
+
+function thisweek2core() {
+  for (let i = gitcalendar.thisdayindex - 1; i < gitcalendar.first2date.length; i++) {
+    gitcalendar.thisweekdatacore += gitcalendar.first2date[i].count
+  }
+};
+
+function thisweekcore(index) {
+  for (let item of gitcalendar.data[index]) {
+    gitcalendar.thisweekdatacore += item.count
+  }
+};
+
+function addlastweek() {
+  for (let item of gitcalendar.lastweek) {
+    gitcalendar.weekdatacore += item.count
+  }
+};
+
+function addbeforeweek() {
+  for (let i = gitcalendar.thisdayindex; i < gitcalendar.beforeweek.length; i++) {
+    gitcalendar.weekdatacore += gitcalendar.beforeweek[i].count
+  }
+};
+
+function addweek(data) {
+  if (gitcalendar.thisdayindex === 6) {
+    gitcalendar.aweekago = gitcalendar.lastweek[0].date;
+    addlastweek()
+  } else {
+    lastweek = data.contributions[51];
+    gitcalendar.aweekago = lastweek[gitcalendar.thisdayindex + 1].date;
+    addlastweek();
+    addbeforeweek()
+  }
+}
+
+fetch(githubapiurl)
+  .then(data => data.json())
+  .then(data => {
+    gitcalendar.data = data.contributions;
+    gitcalendar.total = data.total;
+    gitcalendar.first2date = gitcalendar.data[48];
+    gitcalendar.firstdate = gitcalendar.data[47];
+    gitcalendar.firstweek = data.contributions[0];
+    gitcalendar.lastweek = data.contributions[52];
+    gitcalendar.beforeweek = data.contributions[51];
+    gitcalendar.thisdayindex = gitcalendar.lastweek.length - 1;
+    gitcalendar.thisday = gitcalendar.lastweek[gitcalendar.thisdayindex].date;
+    gitcalendar.oneyearbeforeday = gitcalendar.firstweek[0].date;
+    gitcalendar.monthindex = gitcalendar.thisday.substring(5, 7) * 1;
+    gitcalendar.montharrbefore = gitcalendar.month.splice(gitcalendar.monthindex, 12 - gitcalendar.monthindex);
+    gitcalendar.monthchange = gitcalendar.montharrbefore.concat(gitcalendar.month);
+    addweek(data);
+    addlastmonth();
+    responsiveChart();
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+
+//手机版更换为svg绘制
+if (document.getElementById("gitcalendarcanvasbox").offsetWidth < 500) {
+  gitcalendar.simplemode = false
+}
+
+//当改变窗口大小时重新绘制canvas
+window.onresize = function() {
+  if (gitcalendar.simplemode) responsiveChart()
+}
+
+//解决滚动滑轮时出现的标签显示
+window.onscroll = function() {
+  if (document.querySelector('.angle-wrapper')) {
+    document.querySelector('.angle-wrapper').style.display = 'none'
+  }
+};</script></div><script defer src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@latest/source/js/issues.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script></div></body></html>
