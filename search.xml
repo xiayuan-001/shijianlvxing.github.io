@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>JavaScript之初识③</title>
+      <link href="posts/js2/"/>
+      <url>posts/js2/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pmp复习(6~7)</title>
       <link href="posts/pmp3/"/>
       <url>posts/pmp3/</url>
@@ -83,7 +108,7 @@
       <link href="posts/js1/"/>
       <url>posts/js1/</url>
       
-        <content type="html"><![CDATA[<audio controls="" preload="" __idm_id__="269361153">  <source    src="http://music.163.com/song/media/outer/url?id=574566207.mp3"    type="audio/mp3"  />  Your browser does not support the audio tag.</audio>]]></content>
+        <content type="html"><![CDATA[<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><table><thead><tr><th align="center">运算符</th><th align="center">描述</th><th align="center">实例</th></tr></thead><tbody><tr><td align="center">+</td><td align="center">加</td><td align="center">10+20=30</td></tr><tr><td align="center">-</td><td align="center">减</td><td align="center">10-20=-10</td></tr><tr><td align="center">*</td><td align="center">乘</td><td align="center">10*20=200</td></tr><tr><td align="center">/</td><td align="center">除</td><td align="center">10/20=0.5</td></tr><tr><td align="center">%</td><td align="center">取余数（取模）</td><td align="center">9%2=1</td></tr></tbody></table><h2 id="递增和递减运算符"><a href="#递增和递减运算符" class="headerlink" title="递增和递减运算符"></a>递增和递减运算符</h2><div class="tip warning faa-horizontal animated"><p><strong>注意：</strong>递增和递减运算符必须和变量配合使用。</p></div><ul><li><p>递增++</p><ul><li><p>前置递增运算符</p><p><strong>使用口诀：先自加，后返回值</strong></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  num = <span class="number">10</span>;</span><br><span class="line">alert(++num + <span class="number">10</span>);   <span class="comment">// 21</span></span><br></pre></td></tr></table></figure></li><li><p>后置递增运算符</p></li><li><p><strong>使用口诀：先返回原值，后自加</strong> </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  num = <span class="number">10</span>;</span><br><span class="line">alert(<span class="number">10</span> + num++);  <span class="comment">// 20</span></span><br></pre></td></tr></table></figure></li></ul></li><li><p>递减–</p></li></ul><h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><table><thead><tr><th align="center">运算符名称</th><th align="center">说明</th><th align="center">案例</th><th align="center">结果</th></tr></thead><tbody><tr><td align="center">&lt;</td><td align="center">小于</td><td align="center">1&lt;2</td><td align="center">true</td></tr><tr><td align="center">&gt;</td><td align="center">大于</td><td align="center">1&gt;2</td><td align="center">false</td></tr><tr><td align="center">&gt;=</td><td align="center">大于等于</td><td align="center">2&gt;=2</td><td align="center">true</td></tr><tr><td align="center">&lt;=</td><td align="center">小于等于</td><td align="center">3&lt;=2</td><td align="center">false</td></tr><tr><td align="center">==</td><td align="center">判等号</td><td align="center">37==37</td><td align="center">true</td></tr><tr><td align="center">!=</td><td align="center">不等号</td><td align="center">37!=37</td><td align="center">false</td></tr><tr><td align="center">===     !==</td><td align="center">全等 要求值和数据类型都一致</td><td align="center">37===’37’</td><td align="center">false</td></tr></tbody></table><h2 id="小结"><a href="#小结" class="headerlink" title="=小结"></a>=小结</h2><table><thead><tr><th align="center">符号</th><th align="center">作用</th></tr></thead><tbody><tr><td align="center">=</td><td align="center">赋值</td></tr><tr><td align="center">==</td><td align="center">判断（判断两边值是否相等）</td></tr><tr><td align="center">===</td><td align="center">全等（判断两边的值和数据类型是否完全相同）</td></tr></tbody></table><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><table><thead><tr><th align="center">逻辑运算符</th><th align="center">说明</th></tr></thead><tbody><tr><td align="center">&amp;&amp;</td><td align="center">与（两边都是 true才返回 true，否则返回 false）</td></tr><tr><td align="center">||</td><td align="center">或（两边都为 false 才返回 false，否则都为true）</td></tr><tr><td align="center">！</td><td align="center">非</td></tr></tbody></table><h2 id="短路运算（逻辑中断）"><a href="#短路运算（逻辑中断）" class="headerlink" title="短路运算（逻辑中断）"></a>短路运算（逻辑中断）</h2><div class="note info simple"><p><strong>短路运算的原理：</strong>当有多个表达式（值）时,左边的表达式值可以确定结果时,就不再继续运算右边的表达式的值;</p></div><ul><li><p><strong>逻辑与</strong></p><ol><li>语法： 表达式1 &amp;&amp; 表达式2</li><li>如果第一个表达式的值为真，则返回表达式2</li><li>如果第一个表达式的值为假，则返回表达式1</li></ol></li><li><p><strong>逻辑或</strong></p><ol><li> 语法： 表达式1 || 表达式2</li><li>如果第一个表达式的值为真，则返回表达式1</li><li>如果第一个表达式的值为假，则返回表达式2</li></ol></li></ul><h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><table><thead><tr><th>赋值运算符</th><th>说明</th><th>案例</th></tr></thead><tbody><tr><td>=</td><td>直接赋值</td><td>var username = ‘xx’</td></tr><tr><td>+=、-=</td><td>加、减一个数后再赋值</td><td>var age = 10;age+=5//15</td></tr><tr><td>*=、/=、%=</td><td>乘、除、取模后再赋值</td><td>var age = 2;age*=5;//10</td></tr></tbody></table><h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h2><table><thead><tr><th>优先级</th><th>运算符</th><th>顺序</th></tr></thead><tbody><tr><td>1</td><td>小括号</td><td>()</td></tr><tr><td>2</td><td>一元运算符</td><td>++ – !</td></tr><tr><td>3</td><td>算数运算符</td><td>先* / % 后+ -</td></tr><tr><td>4</td><td>关系运算符</td><td>&gt; &gt;= &lt; &lt;=</td></tr><tr><td>5</td><td>相等运算符</td><td>==     !=     ===      !==</td></tr><tr><td>6</td><td>逻辑运算符</td><td>先&amp;&amp; 后 ||</td></tr><tr><td>7</td><td>赋值运算符</td><td>=</td></tr><tr><td>8</td><td>逗号运算符</td><td>，</td></tr></tbody></table><ul><li>一元运算符里面的逻辑非优先级很高</li><li>逻辑与比逻辑或优先级高</li></ul>]]></content>
       
       
       <categories>
