@@ -69,6 +69,18 @@ h1#site-title {
 #post-comment{
 	font-family: 'candy', sans-serif;
 }
+#page-header #page-site-info{
+	font-family: 'song', sans-serif;
+}
+#content-inner #archive{
+	font-family: 'song', sans-serif;
+}
+#content-inner #page {
+	font-family: 'candy', sans-serif;
+}
+#content-inner > #page > #article-container >.flink h1{
+	font-family: 'candy', sans-serif;
+}
 
 /* 文章以及侧边栏透明 */
 div#post{
