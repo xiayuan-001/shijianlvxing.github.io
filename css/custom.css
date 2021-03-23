@@ -1,17 +1,74 @@
+/* 全文字体设置*/
 @font-face{
   font-family:'xiaokai' ;  /* 字体名自定义即可 */
   src:url('/fonts/xiaokai.ttf'); /* 字体文件路径 */
   font-display : swap;
 }
-
+@font-face{
+  font-family: 'candy';  /* 字体名自定义即可 */
+  src:url('/fonts/candy.ttf'); /* 字体文件路径 */
+  font-display : swap;
+}
+@font-face{
+  font-family: 'song';  /* 字体名自定义即可 */
+  src:url('/fonts/song.ttf'); /* 字体文件路径 */
+  font-display : swap;
+}
 #post-info .post-title{
-	font-family: 'xiaokai',sans-serif;
+	font-family: 'song',sans-serif;
 }
 
 h1#site-title {
-  font-family: 'xiaokai', sans-serif;
+  font-family: 'song', sans-serif;
 }
 
+#nav .site-page{
+  font-family: 'song', sans-serif;
+}
+
+#nav #site-name{
+  font-family: 'song', sans-serif;
+}
+
+#page-header #site-subtitle{
+  font-family: 'song', sans-serif;
+}
+#recent-posts > .recent-post-item > .recent-post-info > .article-title{
+  font-family: 'song', sans-serif;
+}
+#aside-content {
+	font-family: 'song', sans-serif;
+}
+#categoryBar{
+	font-family: 'song', sans-serif;
+}
+.blog-slider{
+	font-family: 'song', sans-serif;
+}
+#footer-wrap{
+	font-family: 'song', sans-serif;
+}
+#article-container.post-content h1,h2,h3,h4,h5,h6{
+	font-family: 'candy', sans-serif;
+}
+#article-container {
+	font-family: 'song', sans-serif;
+}
+#post .post-copyright{
+	font-family: 'candy', sans-serif;
+}
+.post-reward .reward-button{
+	font-family: 'candy', sans-serif;
+}
+.relatedPosts > .headline{
+	font-family: 'candy', sans-serif;
+}
+.relatedPosts > .relatedPosts-list .content{
+	font-family: 'song', sans-serif;
+}
+#post-comment{
+	font-family: 'candy', sans-serif;
+}
 
 /* 文章以及侧边栏透明 */
 div#post{
