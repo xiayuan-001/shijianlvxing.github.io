@@ -78,6 +78,9 @@ h1#site-title {
 #content-inner #page {
 	font-family: 'candy', sans-serif;
 }
+#content-inner > #page >.category-lists{
+	font-family: 'song', sans-serif;
+}
 #content-inner > #page > #article-container >.flink h1{
 	font-family: 'candy', sans-serif;
 }
@@ -153,3 +156,38 @@ div.card-widget{
       background: rgba(0, 0, 0, 0.5)!important;
       color: #ffffff;
       }
+
+/* social图标修改	  */
+.fa-github-square:before
+{content:"\f092";
+ color: blue;
+ font-size: 24px;
+}
+
+.fa-envelope-square:before
+{content:"\f199";
+color: orange;
+font-size: 24px;
+}
+
+.fa-cuttlefish:before
+{content:"\f38c";
+color: red;
+font-size: 24px;
+}
+
+.fa-qq:before
+{content:"\f1d6";
+color: hotpink;
+font-size: 24px;
+}
+
+.fa-rss:before
+{content:"\f09e";
+color: purple;
+font-size: 24px;
+}
+
+.fa-heart:before
+{content:"\f004";
+color: red;}
