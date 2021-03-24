@@ -179,6 +179,199 @@ template {
 [hidden] {
   display: none
 }
+/* 全文字体设置*/
+@font-face{
+  font-family:'xiaokai' ;  /* 字体名自定义即可 */
+  src:url('/fonts/xiaokai.ttf'); /* 字体文件路径 */
+  font-display : swap;
+}
+@font-face{
+  font-family: 'candy';  /* 字体名自定义即可 */
+  src:url('/fonts/candy.ttf'); /* 字体文件路径 */
+  font-display : swap;
+}
+@font-face{
+  font-family: 'song';  /* 字体名自定义即可 */
+  src:url('/fonts/song.ttf'); /* 字体文件路径 */
+  font-display : swap;
+}
+#post-info .post-title{
+	font-family: 'song',sans-serif;
+}
+
+h1#site-title {
+  font-family: 'song', sans-serif;
+}
+
+#nav .site-page{
+  font-family: 'song', sans-serif;
+}
+
+#nav #site-name{
+  font-family: 'song', sans-serif;
+}
+
+#page-header #site-subtitle{
+  font-family: 'song', sans-serif;
+}
+#recent-posts > .recent-post-item > .recent-post-info > .article-title{
+  font-family: 'song', sans-serif;
+}
+#aside-content {
+	font-family: 'song', sans-serif;
+}
+#categoryBar{
+	font-family: 'song', sans-serif;
+}
+.blog-slider{
+	font-family: 'song', sans-serif;
+}
+#footer-wrap{
+	font-family: 'song', sans-serif;
+}
+#article-container.post-content h1,h2,h3,h4,h5,h6{
+	font-family: 'candy', sans-serif;
+}
+#article-container {
+	font-family: 'song', sans-serif;
+}
+#post .post-copyright{
+	font-family: 'candy', sans-serif;
+}
+.post-reward .reward-button{
+	font-family: 'candy', sans-serif;
+}
+.relatedPosts > .headline{
+	font-family: 'candy', sans-serif;
+}
+.relatedPosts > .relatedPosts-list .content{
+	font-family: 'song', sans-serif;
+}
+#post-comment{
+	font-family: 'candy', sans-serif;
+}
+#page-header #page-site-info{
+	font-family: 'song', sans-serif;
+}
+#content-inner #archive{
+	font-family: 'song', sans-serif;
+}
+#content-inner #page {
+	font-family: 'candy', sans-serif;
+}
+#content-inner > #page >.category-lists{
+	font-family: 'song', sans-serif;
+}
+#content-inner > #page > #article-container >.flink h1{
+	font-family: 'candy', sans-serif;
+}
+
+/* 文章以及侧边栏透明 */
+div#post{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#page{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#archive{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#tag{
+  background: rgba(255, 255, 255, 0.9);
+}
+div#category{
+  background: rgba(255, 255, 255, 0.9);
+}
+div.card-widget{
+	background: rgba(255, 255, 255, 0.9)!important;
+}
+
+
+/* 页脚透明 */
+#footer{
+  background: transparent!important;
+}
+/* 头图透明 */
+#page-header{
+  background: transparent!important;
+}
+/*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */
+/*#page-header.post-bg:before {
+  background-color: transparent!important;
+}
+/*夜间模式伪类遮罩层透明*/
+[data-theme="dark"]
+  #footer::before{
+      background: transparent!important;
+    }
+[data-theme="dark"]
+  #page-header::before{
+    background: transparent!important;
+    }
+	
+	
+/* 阅读模式 */	
+[data-theme="dark"]
+  #aside-content .card-widget{
+      background: rgba(0, 0, 0, 0.5)!important;
+    }
+[data-theme="dark"]
+  div#post{
+    background: rgba(0, 0, 0, 0.5)!important;
+    }
+
+.read-mode #aside-content .card-widget{
+      background: rgba(158, 204, 171, 0.5)!important;
+    }
+.read-mode div#post{
+    background: rgba(158, 204, 171, 0.5)!important;
+    }
+
+[data-theme="dark"]
+  .read-mode #aside-content .card-widget{
+        background: rgba(0, 0, 0, 0.5)!important;
+        color: #ffffff;
+      }
+[data-theme="dark"]  
+  .read-mode div#post{
+      background: rgba(0, 0, 0, 0.5)!important;
+      color: #ffffff;
+      }
+
+/* social图标修改	  */
+.fa-github-square:before
+{content:"\f092";
+ color: blue;
+ font-size: 24px;
+}
+
+.fa-envelope-square:before
+{content:"\f199";
+color: orange;
+font-size: 24px;
+}
+
+.fa-cuttlefish:before
+{content:"\f38c";
+color: red;
+font-size: 24px;
+}
+
+.fa-qq:before
+{content:"\f1d6";
+color: hotpink;
+font-size: 24px;
+}
+
+.fa-rss:before
+{content:"\f09e";
+color: purple;
+font-size: 24px;
+}
+
+.fa-heart:before
+{content:"\f004";
+color: red;}
 .limit-one-line,
 #aside-content .card-info .card-info-data > .card-info-data-item a .headline,
 #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a span,
