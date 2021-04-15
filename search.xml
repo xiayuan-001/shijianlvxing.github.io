@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>pmp公式</title>
+      <link href="posts/pmp@/"/>
+      <url>posts/pmp@/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th align="center">重点公式归纳</th><th align="center">详情</th></tr></thead><tbody><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center">三点估算</td><td align="center">贝塔分布：平均值=（最乐观+最悲观+最可能*4）/6</td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center">标准差：=（最悲观-最乐观）/6</td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center">挣值分析     EVA</td><td align="center">BAC:  完工预算【成本基准】     PV:计划价值【计划做多少】     EV:挣值【目前已经做了多少】     AC:实际成本【实际花了多少】</td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center">偏差分析</td><td align="center">SV=EV-PV（进度偏差）     CV=EV-AC（成本偏差）     SPI=EV/PV（进度绩效指数）【比较进度】     CPI=EV/AC（成本绩效偏差）【比较成本】</td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> PMP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PMP,项目管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript之初识③</title>
       <link href="posts/js2/"/>
       <url>posts/js2/</url>
