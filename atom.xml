@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-15T07:29:39.509Z</updated>
+  <updated>2021-04-19T06:35:22.932Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/posts/pmp@/"/>
     <id>http://example.com/posts/pmp@/</id>
     <published>2021-04-15T01:42:25.000Z</published>
-    <updated>2021-04-15T07:29:39.509Z</updated>
+    <updated>2021-04-19T06:35:22.932Z</updated>
     
-    <content type="html"><![CDATA[<table><thead><tr><th align="center">重点公式归纳</th><th align="center">详情</th></tr></thead><tbody><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center">三点估算</td><td align="center">贝塔分布：平均值=（最乐观+最悲观+最可能*4）/6</td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center">标准差：=（最悲观-最乐观）/6</td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center">挣值分析     EVA</td><td align="center">BAC:  完工预算【成本基准】     PV:计划价值【计划做多少】     EV:挣值【目前已经做了多少】     AC:实际成本【实际花了多少】</td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center">偏差分析</td><td align="center">SV=EV-PV（进度偏差）     CV=EV-AC（成本偏差）     SPI=EV/PV（进度绩效指数）【比较进度】     CPI=EV/AC（成本绩效偏差）【比较成本】</td></tr><tr><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th align="center">重点公式归纳</th><th align="center">详情</th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>三点估算</strong></td><td align="center">贝塔分布：平均值=（最乐观+最悲观+最可能*4）/6<br/>标准差：=（最悲观-最乐观）/6</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>挣值分析<br/>EVA</strong></td><td align="center">BAC:  完工预算【成本基准】   <br/>  PV:计划价值【计划做多少】   <br/>  EV:挣值【目前已经做了多少】   <br/>  AC:实际成本【实际花了多少】</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"><strong>SPI</strong></td><td align="center"><strong>CPI</strong></td></tr><tr><td align="center"><strong>偏差分析</strong></td><td align="center">SV=EV-PV（进度偏差）  <br/>   CV=EV-AC（成本偏差）  <br/>   SPI=EV/PV（进度绩效指数）【比较进度】 <br/>    CPI=EV/AC（成本绩效偏差）【比较成本】</td><td align="center">&gt;1 进度 提前<br/>=1 进度 符合<br/>&lt;1 进度 落后</td><td align="center">&gt;1 成本 节约<br/>=1 成本 符合<br/>&lt;1 成本 超支</td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>预测</strong></td><td align="center">EAC（完工估算）完工预期的总成本<br/>ETC（完工尚需估算）还需多少钱</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>EAC</strong></td><td align="center">【典型】EAC = AC + (BAC-EV)/CPI   按照当前绩效(BAC/CPI)<br/>【非典型】EAC = AC + (BAC-EV)/1  按照计划绩效<br/>【通用】EAC = AC + (BAC-EV)/绩效 题目给定绩效<br/>【同时影响】EAC = AC + (BAC-EV)/(CPI*SPI) 同时受CPI&amp;SPI影响</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>时间</strong></td><td align="center">总工期/SPI</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>完工尚需绩效指数<br/>TCPI</strong></td><td align="center">TCPI = (BAC-EV)/(BAC-AC)【越小越好】</td><td align="center">&gt;1 很难完成<br/>=1 正好完成<br/>&lt;1 很容易完成</td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>现值<br/>折现率</strong></td><td align="center">PV=FV/(1+r)^n</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>净现值</strong></td><td align="center">NPV=∑(CI-CO)/(1+i)n【越大越好】</td><td align="center">NPV&gt;0 接受项目<br/>NPV&lt;0 放弃项目</td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>内部收益率<br/>IRR</strong></td><td align="center">越大越好</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>投资回收期<br/>PP</strong></td><td align="center">越短越好</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>投资回报率<br/>ROI</strong></td><td align="center">越大越好</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><strong>效益成本比<br/>BCR</strong></td><td align="center">越大越好</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table>]]></content>
     
     
       
@@ -33,11 +33,10 @@
 &lt;tr&gt;
 &lt;th align=&quot;center&quot;&gt;重点公式归纳&lt;/th&gt;
 &lt;th align=&quot;center&quot;&gt;详情&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;/th&gt;
 &lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
-&lt;td align</summary>
+&lt;/the</summary>
       
     
     
