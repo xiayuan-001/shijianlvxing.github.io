@@ -3545,28 +3545,31 @@ span.categoryBar-list-count::after {
   right: -100%;
 }
 li.categoryBar-list-item:nth-child(1) {
-  background: url('https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/hao.png');
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@1.jpg');
 }
 li.categoryBar-list-item:nth-child(2) {
-  background: url('https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/xue.png');
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@4.jpg');
 }
 li.categoryBar-list-item:nth-child(3) {
-  background: url('https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/tian.png');
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@2.jpg');
 }
 li.categoryBar-list-item:nth-child(4) {
-  background: url('https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/shang.png');
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@6.jpg');
 }
 li.categoryBar-list-item:nth-child(5) {
-  background: url('https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/po.png');
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@7.jpg');
 }
 li.categoryBar-list-item:nth-child(6) {
-  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/chen.png');
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@8.jpg');
 }
 li.categoryBar-list-item:nth-child(7) {
-  background: url('https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/zhan.png');
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@5.jpg');
 }
 li.categoryBar-list-item:nth-child(8) {
-  background: url('https://cdn.jsdelivr.net/gh/xiayuan-001/blogimg/img/sheng.png');
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@3.jpg');
+}
+li.categoryBar-list-item:nth-child(9) {
+  background: url('https://gitee.com/yuanyuanzi/blogimg/raw/master/img/@9.jpg');
 }
 li.categoryBar-list-item:nth-child(1)>span::after {
   content: '持续更新ing' !important;
@@ -3591,6 +3594,9 @@ li.categoryBar-list-item:nth-child(7)>span::after {
 }
 li.categoryBar-list-item:nth-child(8)>span::after {
   content: '教程' !important;
+}
+li.categoryBar-list-item:nth-child(9)>span::after {
+  content: '笔记' !important;
 }
 li.categoryBar-list-item {
   width: 24% !important;
