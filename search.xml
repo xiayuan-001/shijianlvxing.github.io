@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>软考高项学习_day05</title>
+      <link href="posts/ruankao5/"/>
+      <url>posts/ruankao5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第三章-项目立项管理"><a href="#第三章-项目立项管理" class="headerlink" title="第三章 项目立项管理"></a>第三章 项目立项管理</h1><h2 id="立项"><a href="#立项" class="headerlink" title="立项"></a>立项</h2><details yellow><summary> 立项流程汇总 </summary>              <div class='content'>              <p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/%E7%BB%98%E5%9B%BE1.jpg"></p>              </div>            </details><h2 id="项目论证"><a href="#项目论证" class="headerlink" title="项目论证"></a>项目论证</h2><details yellow><summary> 3个阶段 </summary>              <div class='content'>              <ul><li>机会研究（±30%）</li><li>初步可行性研究（±20%）</li><li>详细可行性研究（±10%）  </li></ul>              </div>            </details><details yellow><summary> 7个步骤 </summary>              <div class='content'>              <ol><li>明确范围目标</li><li>收集资料</li><li>拟定方案</li><li>分析方案</li><li>选择方案</li><li>编制报告</li><li>编制计划  </li></ol>              </div>            </details><h3 id="机会研究"><a href="#机会研究" class="headerlink" title="机会研究"></a>机会研究</h3><div class="note primary simple"><p>机会研究报告； 是项目建议书的咨询文件；寻找投资机会、鉴别投资方向（可省可合并）    </p></div><ul><li><p>可行性研究</p><ol><li><p>技术可行性</p><ul><li>技术能力、开发风险、人力资源有效性、物资可用性  </li></ul></li><li><p>经济可行性</p><ul><li>支出分析—一次性和非一次性；收益分析—直接和间接；收益投资比和投资回收期分析、敏感性分析</li></ul></li><li><p>运行环境可行性</p><ul><li>评估系统顺利运行所需的环境及建立环境所需的工作</li></ul></li><li><p>其他方面可行性</p><ul><li>法律可行性、社会可行性、财务可行性、组织可行性、 投资必要性、 风险因素及对策—市场风险等</li></ul></li></ol></li><li><p>初步可行性研究</p><div class="note simple"><p>初步可行性研究报告；初步判断项目是否有生命力，能否盈利 （可省可合并）   </p></div></li><li><p>详细可行性研究</p><div class="note simple"><p>可行性研究报告；详细论证，多方案比较选择  （必须要有）  </p></div><details yellow><summary> 详细可行性研究方法 </summary>              <div class='content'>              <ul><li>投资估算法</li><li>增量净效益法</li><li>经济评价法</li><li>市场预测法</li></ul>              </div>            </details><details yellow><summary> 详细可行性研究内容 </summary>              <div class='content'>                <div class="note success simple"><p>概述、需求确定、资源设施分析、初步技术方案、进度计划建议、投资估算和资金筹措、人力资源培训、经济和社会效益分析、合作/协作方式建议。  </p></div>              </div>            </details><p><img src="https://gitee.com/yuanyuanzi/blogimg/raw/master/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210713100340.png"></p></li></ul><ul><li><p>项目评估</p><div class="note info simple"><p>步骤： 成立小组、开展调查、分析评估、编写报告、讨论修改、专家论证、报告定稿</p></div></li><li><p>规定</p><div class="tip warning faa-horizontal animated"><p>可行性研究报告批复内容有重大变更或变更投资超出已批复总投资额度10%， 重新报批可行性研究报告项目可行性研究报告的编制内容与项目建议书批复内容有重大变更的，应重新报批项目建议书  </p></div></li></ul><h1 id="第四章-项目整体管理"><a href="#第四章-项目整体管理" class="headerlink" title="第四章 项目整体管理"></a>第四章 项目整体管理</h1><h2 id="制定项目章程"><a href="#制定项目章程" class="headerlink" title="制定项目章程"></a>制定项目章程</h2><div class="note primary simple"><p>编写一份正式批准项目并授权项目经理的文件</p></div><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><div class='checkbox red'><input type="radio" />            <p>商业论证（论证是否值得；商业分析师做，发起组织制定和修改，项目经理协助建议）</p>            </div><div class='checkbox green'><input type="radio" />            <p>项目工作说明书SOW（业务需求、产品范围描述、战略计划）</p>            </div><div class='checkbox yellow'><input type="radio" />            <p>协议（合同、意向书、备忘录等）</p>            </div><div class='checkbox cyan'><input type="radio" />            <p>事业环境因素（能影响项目、积极或消极影响、无法控制）</p>            </div><div class='checkbox blue'><input type="radio" />            <p>组织过程资产（组织特有、可更新和增补、过程与程序、知识库）</p>            </div><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>            <p>专家判断（人人都是专家）</p>            </div><div class='checkbox blue checked'><input type="checkbox" checked="checked"/>            <p>引导技术（头脑风暴—信息收集、短时间内、大量创意、畅所欲言，四不原则）</p>            </div><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><div class='checkbox plus green checked'><input type="checkbox" checked="checked"/>            <p>项目章程</p>            </div><ul><li><p>委派的项目经理及其权责；</p></li><li><p>项目的目的、概括性描述；可测量的目标；</p></li><li><p>总体范围、总体里程碑进度计划、总体预算、</p></li><li><p>主要风险、主要干系人清单</p></li><li><p>成功标准、退出标准  </p></li></ul><h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol><li>项目由项目以外的实体来启动，经批准的项目章程意味着项目的正式启动；</li><li>项目章程在项目执行组织与需求组织之间建立起伙伴关系， 不要把项目章程看做合同；</li><li>最好在制定项目章程时就任命项目经理， 最晚也必须在规划开始之前</li></ol><h2 id="制定项目管理计划"><a href="#制定项目管理计划" class="headerlink" title="制定项目管理计划"></a>制定项目管理计划</h2><div class="note primary simple"><p>定义、准备和协调所有子计划， 整合为一份综合的项目管理计划</p></div><h2 id="指导与管理项目工作"><a href="#指导与管理项目工作" class="headerlink" title="指导与管理项目工作"></a>指导与管理项目工作</h2><div class="note primary simple"><p>领导和执行项目管理计划中所确定的工作， 并实施已批准的变更</p></div><h2 id="监控项目工作"><a href="#监控项目工作" class="headerlink" title="监控项目工作"></a>监控项目工作</h2><div class="note primary simple"><p>跟踪、审查和报告项目进展，以实现绩效目标</p></div><h2 id="实施整体变更控制"><a href="#实施整体变更控制" class="headerlink" title="实施整体变更控制"></a>实施整体变更控制</h2><div class="note primary simple"><p>审查所有变更请求， 批准变更， 管理变更</p></div><h2 id="结束项目或阶段"><a href="#结束项目或阶段" class="headerlink" title="结束项目或阶段"></a>结束项目或阶段</h2><div class="note primary simple"><p>完结所有过程组的所有活动， 正式结束项目或阶段</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软考 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软考,项目管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>软考高项学习_day04</title>
       <link href="posts/ruankao4/"/>
       <url>posts/ruankao4/</url>
